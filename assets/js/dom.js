@@ -1,5 +1,6 @@
 import { Animal } from "./animal.js";
 import { Leon, Lobo, Oso, Serpiente, Aguila } from "./claseAnimales.js";
+import { cartaAnimal } from "./listaAnimales.js";
 
 //funcion para limpiar datos del formulario al refrescar
 let limpiar = () => {
@@ -32,22 +33,27 @@ export function eventoBoton(){ document.getElementById('btnRegistrar').addEventL
     if (nombreAnimal === 'Lobo'){
         let lobo = new Lobo (nombreAnimal, edadAnimal, 'assets/imgs/Lobo.jpg', comentario)
         console.log(`creado nuevo animal ${lobo.Nombre}, ${lobo.Edad}, ${lobo.Img}, ${lobo.Comentarios}, ${lobo.Aullar()}}`)
+        cartaAnimal(lobo)
         setAnimalPreviewImg(lobo.Img)
     } else if (nombreAnimal === 'León' || nombreAnimal === 'Leon'){
         let leon = new Leon (nombreAnimal, edadAnimal, 'assets/imgs/Leon.png', comentario)
         console.log(`creado nuevo animal ${leon.Nombre}, ${leon.Edad}, ${leon.Img}, ${leon.Comentarios}, ${leon.Rugir()}}`)
+        cartaAnimal(leon)
         setAnimalPreviewImg(leon.Img)
     } else if (nombreAnimal === 'Oso'){
         let oso = new Oso (nombreAnimal, edadAnimal, 'assets/imgs/Oso.jpg', comentario)
         console.log(`creado nuevo animal ${oso.Nombre}, ${oso.Edad}, ${oso.Img}, ${oso.Comentarios}, ${oso.Grunir()}}`)
+        cartaAnimal(oso)
         setAnimalPreviewImg(oso.Img)
     } else if (nombreAnimal === 'Serpiente'){
         let serpiente = new Serpiente (nombreAnimal, edadAnimal, 'assets/imgs/Serpiente.jpg', comentario)
         console.log(`creado nuevo animal ${serpiente.Nombre}, ${serpiente.Edad}, ${serpiente.Img}, ${serpiente.Comentarios}, ${serpiente.Sisear()}}`)
+        cartaAnimal(serpiente)
         setAnimalPreviewImg(serpiente.Img)
     } else if (nombreAnimal === 'Aguila'){
         let aguila= new Aguila(nombreAnimal, edadAnimal, 'assets/imgs/Aguila.png', comentario)
         console.log(`creado nuevo animal ${aguila.Nombre}, ${aguila.Edad}, ${aguila.Img}, ${aguila.Comentarios}, ${aguila.Chillar()}}`)
+        cartaAnimal(aguila)
         setAnimalPreviewImg(aguila.Img)
     } else {
         alert('Error al registrar animal')

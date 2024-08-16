@@ -53,3 +53,8 @@ body {
     max-width: 85% !important;
 }
 
+/* Cartas Animales */
+.animal-img{
+  height: 15rem;
+  object-fit: cover;
+}
