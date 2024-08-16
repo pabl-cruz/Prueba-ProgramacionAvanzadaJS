@@ -1,6 +1,7 @@
 //Objeto padre animal
 
 class Animal {
+    //variables privadas
     #nombre
     #edad
     #img
@@ -27,14 +28,8 @@ class Animal {
     get Sonido(){
         return this.#sonido
     }
-    get Comentarios(){
-        return this.#comentarios
-    }
-    //setters
-    set Sonido(nuevo_sonido){
-        this.#sonido = nuevo_sonido
-    }
 
+    //setter
     set Comentarios(nuevo_comentario){
         this.#comentarios = nuevo_comentario
     }
