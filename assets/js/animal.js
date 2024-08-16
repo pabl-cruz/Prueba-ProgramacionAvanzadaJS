@@ -15,24 +15,27 @@ class Animal {
         this.#sonido = sonido
     } 
     //getters
-    get nombre(){
+    get Nombre(){
         return this.#nombre
     }
-    get edad(){
+    get Edad(){
         return this.#edad
     }
-    get img(){
+    get Img(){
         return this.#img
     }
-    get sonido(){
+    get Sonido(){
         return this.#sonido
     }
-    //setter
-    set sonido(nuevo_sonido){
+    get Comentarios(){
+        return this.#comentarios
+    }
+    //setters
+    set Sonido(nuevo_sonido){
         this.#sonido = nuevo_sonido
     }
 
-    set comentarios(nuevo_comentario){
+    set Comentarios(nuevo_comentario){
         this.#comentarios = nuevo_comentario
     }
 }
