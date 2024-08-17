@@ -5,11 +5,9 @@ class Leon extends Animal{
     constructor(nombre, edad, img, comentarios, sonido){
         super(nombre, edad, img, comentarios, sonido)
     }
-    set Sonido(nuevo_sonido){
-        this.sonido = nuevo_sonido
-    }
-    Rugir(){
-        this.sonido = '../sounds/Rugido.mp3';
+
+    Rugir(nuevo_sonido){
+        this.sonido = nuevo_sonido;
         return this.sonido
     }
 }
@@ -18,11 +16,9 @@ class Lobo extends Animal{
     constructor(nombre, edad, img, comentarios, sonido){
         super(nombre, edad, img, comentarios, sonido)
     }
-    set Sonido(nuevo_sonido){
-        this.sonido = nuevo_sonido
-    }
-    Aullar(){
-        this.sonido = '../sounds/Aullido.mp3';
+
+    Aullar(nuevo_sonido){
+        this.sonido = nuevo_sonido;
         return this.sonido
     }
 }
@@ -31,11 +27,9 @@ class Oso extends Animal{
     constructor(nombre, edad, img, comentarios, sonido){
         super(nombre, edad, img, comentarios, sonido)
     }
-    set Sonido(nuevo_sonido){
-        this.sonido = nuevo_sonido
-    }
-    Grunir(){
-        this.sonido = '../sounds/Grunido.mp3';
+
+    Grunir(nuevo_sonido){
+        this.sonido = nuevo_sonido;
         return this.sonido
     }
 }
@@ -44,11 +38,9 @@ class Serpiente extends Animal{
     constructor(nombre, edad, img, comentarios, sonido){
         super(nombre, edad, img, comentarios, sonido)
     }
-    set Sonido(nuevo_sonido){
-        this.sonido = nuevo_sonido
-    }
-    Sisear(){
-        this.sonido = '../sounds/Siseo.mp3';
+ 
+    Sisear(nuevo_sonido){
+        this.sonido = nuevo_sonido;
         return this.sonido
     }
 }
@@ -57,11 +49,9 @@ class Aguila extends Animal{
     constructor(nombre, edad, img, comentarios, sonido){
         super(nombre, edad, img, comentarios, sonido)
     }
-    set Sonido(nuevo_sonido){
-        this.sonido = nuevo_sonido
-    }
-    Chillar(){
-        this.sonido = '../sounds/Chillido.mp3';
+
+    Chillar(nuevo_sonido){
+        this.sonido = nuevo_sonido;
         return this.sonido
     }
 }
