@@ -13,7 +13,7 @@ const modalAnimal = (animal) => {
         <h5 class='py-2 text-white'>Edad estimada del animal:</h5>
         <p class='py-2 text-white'>${animal.Edad}</p>
         <h5 class='py-2 text-white'>Comentarios</h5>
-        <p class='py-2 text-white'>${animal.Comentarios}</p>
+        <p class='py-2 text-white'>${animal.comentarios}</p>
         <h5 class='py-2 text-white'>Sonido:</h5>`
     modalCuerpo.appendChild(audio);
     

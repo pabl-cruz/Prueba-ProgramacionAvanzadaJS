@@ -3,6 +3,7 @@ import { Leon, Lobo, Oso, Serpiente, Aguila } from "./modules/clasesAnimales.js"
 import { limpiar } from "./modules/dom.js";
 import { reproducirSonido, cartaAnimal } from "./modules/carta.js";
 import { modalAnimal } from "./modules/modal.js";
+import { proxyCom, proxyAnimal } from "./modules/proxy.js";
 
 
 function eventoBoton(){ document.getElementById('btnRegistrar').addEventListener('click', async (event) =>{
@@ -15,7 +16,9 @@ function eventoBoton(){ document.getElementById('btnRegistrar').addEventListener
     const { imagen, sonido } = await funcionAutoEjecutable.obtenerDatosJson(nombreAnimal)
     const imagenAnimal = `/assets/imgs/${imagen}`
     const sonidoAnimal = `/assets/sounds/${sonido}`
+
     let idAnimal = funcionAutoEjecutable.arregloAnimales.length
+  
     event.preventDefault
 
     limpiar()
@@ -26,27 +29,27 @@ function eventoBoton(){ document.getElementById('btnRegistrar').addEventListener
     }
 
     if (nombreAnimal === 'Lobo'){
-        let lobo = new Lobo (nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
+        let lobo = new proxyAnimal (Lobo, nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
         funcionAutoEjecutable.agregarAnimal(lobo)
         idAnimal
         cartaAnimal(lobo, idAnimal)
     } else if (nombreAnimal === 'León' || nombreAnimal === 'Leon'){
-        let leon = new Leon (nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
+        let leon = new proxyAnimal (Leon, nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
         funcionAutoEjecutable.agregarAnimal(leon)
         idAnimal
         cartaAnimal(leon, idAnimal)
     } else if (nombreAnimal === 'Oso'){
-        let oso = new Oso (nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
+        let oso = new proxyAnimal (Oso, nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
         funcionAutoEjecutable.agregarAnimal(oso)
         idAnimal
         cartaAnimal(oso, idAnimal)
     } else if (nombreAnimal === 'Serpiente'){
-        let serpiente = new Serpiente (nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
+        let serpiente = new proxyAnimal (Serpiente, nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
         funcionAutoEjecutable.agregarAnimal(serpiente)
         idAnimal
         cartaAnimal(serpiente, idAnimal)
     } else if (nombreAnimal === 'Aguila'){
-        let aguila= new Aguila(nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
+        let aguila= new proxyAnimal(Aguila, nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
         funcionAutoEjecutable.agregarAnimal(aguila)
         idAnimal
         cartaAnimal(aguila, idAnimal)

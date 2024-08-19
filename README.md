@@ -32,5 +32,4 @@ git clone git@github.com:pabl-cruz/Prueba-ProgramacionAvanzadaJS.git
 ```
 cd ProgramacionAvanzadaJS
 ```
-3. Configura un Live server mediante node o por Visual Code hacia *index.html* para poder usar la aplicacion o alternativamente, ir al enlace de demostracion en la descripcion del repositorio
-
+3. Configura un Live server mediante node o por Visual Code hacia *index.html* para poder usar la aplicacion.
