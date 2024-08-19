@@ -25,8 +25,11 @@ const cartaAnimal= (animal, index) => {
    contenedorAnimales.appendChild(carta)
    let reproducir = carta.querySelector(`#reproducir-${index}`);
   //eventos
+
+  //evento para reproducir sonido del animal
    reproducir.addEventListener('click', () => reproducirSonido(animal));
 
+   //evento que muestra el modal asignado a id de animal
    carta.addEventListener('click', (event) =>{
     const target = event.target.closest('.mostrar-modal')
     if(target){

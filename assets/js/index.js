@@ -23,15 +23,20 @@ function eventoBoton(){ document.getElementById('btnRegistrar').addEventListener
 
     limpiar()
 
+    //condicion si en el formulario no se llenan todos los datos
     if(!nombreAnimal || !edadAnimal || !comentario){
         alert('Por favor, completar todos los datos del registro.');
         return
     }
-
+    //condiciones para generar instancias de animales y agregarlas a arregloAnimales
     if (nombreAnimal === 'Lobo'){
+        //crea instancia de subclase animal correspondiente a nombre
         let lobo = new proxyAnimal (Lobo, nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
+        //agrega animal a arreglo
         funcionAutoEjecutable.agregarAnimal(lobo)
+        //actualiza valor de elementos en arreglo
         idAnimal
+        //genera carta de animal con id e informacion
         cartaAnimal(lobo, idAnimal)
     } else if (nombreAnimal === 'León' || nombreAnimal === 'Leon'){
         let leon = new proxyAnimal (Leon, nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
@@ -56,11 +61,10 @@ function eventoBoton(){ document.getElementById('btnRegistrar').addEventListener
     } else {
         alert('Error al registrar animal')
     }
-    console.log(funcionAutoEjecutable.arregloAnimales)
 })}
 
 
-
+//evento asincrono al cambiar opcion de animal, muestra inmediatamente una imagen del animal cuando se elige animal.
 document.getElementById('animal').addEventListener('change', async (event) => {
     const {imagen, sonido } = await funcionAutoEjecutable.obtenerDatosJson(event.target.value)
     const newImg = document.createElement('img')

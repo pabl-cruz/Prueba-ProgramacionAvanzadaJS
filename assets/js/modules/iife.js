@@ -11,7 +11,7 @@ const iife = (() => {
             console.error('Error obteniendo la imagen del animal:', error)
         }
     }
-
+//function de agregar animal al arreglo
 function agregarAnimal(animal){
     arregloAnimales.push(animal)
 }
