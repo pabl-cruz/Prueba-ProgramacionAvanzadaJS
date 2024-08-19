@@ -6,7 +6,6 @@ const iife = (() => {
             const response = await fetch('/animales.json')
             const data = await response.json()
             const animalData = data.animales.find(animal => animal.name === nombre);
-            console.log(animalData)
             return animalData
         } catch (error) {
             console.error('Error obteniendo la imagen del animal:', error)

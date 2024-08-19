@@ -1,8 +1,8 @@
-import { iife as funcionAutoEjecutable} from "./iife.js";
-import { Leon, Lobo, Oso, Serpiente, Aguila } from "./clasesAnimales.js";
-import { limpiar } from "./dom.js";
-import { reproducirSonido, cartaAnimal } from "./carta.js";
-import { modalAnimal } from "./modal.js";
+import { iife as funcionAutoEjecutable} from "./modules/iife.js";
+import { Leon, Lobo, Oso, Serpiente, Aguila } from "./modules/clasesAnimales.js";
+import { limpiar } from "./modules/dom.js";
+import { reproducirSonido, cartaAnimal } from "./modules/carta.js";
+import { modalAnimal } from "./modules/modal.js";
 
 
 function eventoBoton(){ document.getElementById('btnRegistrar').addEventListener('click', async (event) =>{
@@ -15,6 +15,7 @@ function eventoBoton(){ document.getElementById('btnRegistrar').addEventListener
     const { imagen, sonido } = await funcionAutoEjecutable.obtenerDatosJson(nombreAnimal)
     const imagenAnimal = `/assets/imgs/${imagen}`
     const sonidoAnimal = `/assets/sounds/${sonido}`
+    let idAnimal = funcionAutoEjecutable.arregloAnimales.length
     event.preventDefault
 
     limpiar()
@@ -26,30 +27,29 @@ function eventoBoton(){ document.getElementById('btnRegistrar').addEventListener
 
     if (nombreAnimal === 'Lobo'){
         let lobo = new Lobo (nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
-        cartaAnimal(lobo)
-        modalAnimal(lobo)
-        console.log('Sonido:', sonido)
-        funcionAutoEjecutable.agregarAnimal(nombreAnimal)
+        funcionAutoEjecutable.agregarAnimal(lobo)
+        idAnimal
+        cartaAnimal(lobo, idAnimal)
     } else if (nombreAnimal === 'León' || nombreAnimal === 'Leon'){
         let leon = new Leon (nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
-        cartaAnimal(leon)
-        modalAnimal(leon)
         funcionAutoEjecutable.agregarAnimal(leon)
+        idAnimal
+        cartaAnimal(leon, idAnimal)
     } else if (nombreAnimal === 'Oso'){
         let oso = new Oso (nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
-        cartaAnimal(oso)
-        modalAnimal(oso)
-        funcionAutoEjecutable.agregarAnimal(nombreAnimal)
+        funcionAutoEjecutable.agregarAnimal(oso)
+        idAnimal
+        cartaAnimal(oso, idAnimal)
     } else if (nombreAnimal === 'Serpiente'){
         let serpiente = new Serpiente (nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
-        cartaAnimal(serpiente)
-        modalAnimal(serpiente)
-        funcionAutoEjecutable.agregarAnimal(nombreAnimal)
+        funcionAutoEjecutable.agregarAnimal(serpiente)
+        idAnimal
+        cartaAnimal(serpiente, idAnimal)
     } else if (nombreAnimal === 'Aguila'){
         let aguila= new Aguila(nombreAnimal, edadAnimal, imagenAnimal, comentario, sonidoAnimal)
-        cartaAnimal(aguila)
-        modalAnimal(aguila)
-        funcionAutoEjecutable.agregarAnimal(nombreAnimal)
+        funcionAutoEjecutable.agregarAnimal(aguila)
+        idAnimal
+        cartaAnimal(aguila, idAnimal)
     } else {
         alert('Error al registrar animal')
     }
